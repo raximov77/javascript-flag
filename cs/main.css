@@ -1,0 +1,72 @@
+/* Header */
+.site-title {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.icon-btn {
+    position: relative;
+    display: flex;
+}
+
+.search{
+    padding: 20px 40px;
+}
+.search-input {
+    width: 230px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: 1px solid #746f6f;
+}
+.search-input:focus {
+    border: 1px solid #393838;
+}
+
+.search-wrapper {
+    margin-bottom: 40px;
+    display: inline-block;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-select {
+    width: 200px;
+    padding: 10px 16px;
+    border: 1px solid #746f6f;
+    border-radius: 6px;
+}
+.search-select:focus{
+    border: 1px solid #1e1d1d;
+}
+
+/* Main */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    justify-content: space-between;
+}
+.country-lists {
+    background-color: #CBD5E1;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 330px;
+    text-align: left;
+}
+.details {
+    padding: 15px 0 15px 25px;
+}
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding-bottom:10px;
+}
+
+.fa-heart, .fa-bookmark {
+    font-size: 25px;
+}

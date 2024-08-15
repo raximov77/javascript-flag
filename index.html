@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries List</title>
+    <link rel="stylesheet" href="./cs/main.css">
+    <link rel="shortcut icon" href="./images/flag-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="py-5 shadow-lg bg-white flex items-center justify-between px-5">
+        <h1 class="site-title"><i class="fa-solid fa-flag"></i> Countries</h1>
+        <div class="icon-wrapper flex items-center gap-5">
+            <button class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <span>&nbsp;0</span>&nbsp;
+              <img class="icon-img" src="./images/heart.svg" alt="Heart" width="20" height="20">
+            </button>
+            <button class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <span>&nbsp;0</span>&nbsp;
+              <img class="icon-img" src="./images/bookmark.svg" alt="Heart" width="20" height="20">
+            </button>
+            <button class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              &nbsp;&nbsp;&nbsp;<img class="icon-img" src="./images/moon.svg" alt="Heart" width="20" height="20">
+            </button>
+        </div>
+    </header>
+    
+    <main class="site-main">
+        <section class="search">
+          <div class="search-wrapper">
+            <div class="search-wrapper-flex1">
+              <input type="text" id="search-input" class="search-input" placeholder="Search...">
+            </div>
+            <div class="search-wrapper-flex1">
+              <select class="search-select">
+                <option value="all">All</option>
+                <option value="all">Uzbekistan</option>
+                <option value="all">Russia</option>
+                <option value="all">Luxembourg</option>
+                <option value="all">Mali</option>
+              </select>
+            </div>
+          </div>
+          <div id="country-list" class="card-container"></div>
+        </section>
+    </main>
+    
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+    </script>
+</body>
+</html>
