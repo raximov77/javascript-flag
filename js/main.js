@@ -1,5 +1,12 @@
 let ElcountryList = document.getElementById('country-list');
 let searchInput = document.getElementById('search-input');
+let tun = document.getElementById('tun')
+let kun = document.getElementById('kun')
+let body = document.querySelector('body')
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('modal-close');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
 
 const countrys = [
     {
@@ -88,6 +95,22 @@ const countrys = [
     }
 ];
 
+function openModal(country) {
+    modalTitle.textContent = `More about ${country.name}`;
+    modalBody.innerHTML = `
+        <p><strong>ID:</strong> ${country.id}</p>
+        <p><strong>Capital:</strong> ${country.capital}</p>
+        <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
+        <p><strong>Flag:</strong></p>
+        <img src="${country.flag}" alt="Flag of ${country.name}" class="w-1/2">
+    `;
+    modal.classList.remove('hidden');
+}
+
+modalClose.addEventListener('click', () => {
+    modal.classList.add('hidden');
+});
+
 function renderCountry(filteredCountries) {
     ElcountryList.innerHTML = '';
 
@@ -104,13 +127,24 @@ function renderCountry(filteredCountries) {
                 <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
             </div>
             <div class="actions">
-                <button><i class="fas fa-heart"></i></button>
+                <button class="more-btn" data-id="${country.id}"><i class="fas fa-heart"></i></button>
                 <button><i class="fas fa-bookmark"></i></button>
-                <button>More</button>
+                <button class="more-btn" data-id="${country.id}">More</button>
             </div>
         `;
 
         ElcountryList.appendChild(countryCard);
+    });
+
+    // Add event listeners to all "More" buttons
+    document.querySelectorAll('.more-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const countryId = parseInt(button.getAttribute('data-id'));
+            const country = countrys.find(c => c.id === countryId);
+            if (country) {
+                openModal(country);
+            }
+        });
     });
 }
 
@@ -125,4 +159,18 @@ function filterCountries() {
 document.addEventListener('DOMContentLoaded', () => {
     renderCountry(countrys);
     searchInput.addEventListener('input', filterCountries);
+});
+
+
+tun.addEventListener('click', () => {
+    body.classList.add('dark_bg')
+    tun.style.display = 'none'
+    kun.style.display = 'block'
+});
+
+
+kun.addEventListener('click', () => {
+    body.classList.remove('dark_bg')
+    tun.style.display = 'block'
+    kun.style.display = 'none'
 });

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countries List</title>
-    <link rel="stylesheet" href="./cs/main.css">
+    <title>Countries List</title> 
     <link rel="shortcut icon" href="./images/flag-solid.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style type="text/tailwindcss">
@@ -14,6 +13,7 @@
           }
         }
     </style>
+    <link rel="stylesheet" href="./cs/main.css">
 </head>
 <body>
 
@@ -28,8 +28,11 @@
               <span>&nbsp;0</span>&nbsp;
               <img class="icon-img" src="./images/bookmark.svg" alt="Heart" width="20" height="20">
             </button>
-            <button class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
-              &nbsp;&nbsp;&nbsp;<img class="icon-img" src="./images/moon.svg" alt="Heart" width="20" height="20">
+            <button id="tun" class="hidden icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <img class="icon-img" src="./images/moon.svg" alt="Heart" width="20" height="20">
+            </button>
+            <button id="kun" class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <img class="icon-img" src="./images/moon.svg" alt="Heart" width="20" height="20">
             </button>
         </div>
     </header>
@@ -52,6 +55,15 @@
           </div>
           <div id="country-list" class="card-container"></div>
         </section>
+      <div id="modal" class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div class="modal-content bg-white p-5 rounded shadow-lg w-1/2">
+            <span id="modal-close" class="absolute top-2 right-2 cursor-pointer text-xl">&times;</span>
+            <h2 id="modal-title" class="text-xl font-bold mb-4">Country Details</h2>
+            <div id="modal-body">
+            </div>
+        </div>
+</div>
+
     </main>
     
     <script src="./js/main.js"></script>
