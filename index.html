@@ -16,26 +16,27 @@
     <link rel="stylesheet" href="./cs/main.css">
 </head>
 <body>
-
+      
     <header class="py-5 shadow-lg bg-white flex items-center justify-between px-5">
-        <h1 class="site-title"><i class="fa-solid fa-flag"></i> Countries</h1>
-        <div class="icon-wrapper flex items-center gap-5">
-            <button class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
-              <span>&nbsp;0</span>&nbsp;
+      <h1 class="site-title"><i class="fa-solid fa-flag"></i> Countries</h1>
+      <div class="icon-wrapper flex items-center gap-5">
+          <button id="like-count-btn" class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <span id="like-count">&nbsp;0</span>&nbsp;
               <img class="icon-img" src="./images/heart.svg" alt="Heart" width="20" height="20">
-            </button>
-            <button class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
-              <span>&nbsp;0</span>&nbsp;
-              <img class="icon-img" src="./images/bookmark.svg" alt="Heart" width="20" height="20">
-            </button>
-            <button id="tun" class="hidden icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
-              <img class="icon-img" src="./images/moon.svg" alt="Heart" width="20" height="20">
-            </button>
-            <button id="kun" class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
-              <img class="icon-img" src="./images/moon.svg" alt="Heart" width="20" height="20">
-            </button>
-        </div>
+          </button>
+          <button id="bookmark-count-btn" class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <span id="bookmark-count">&nbsp;0</span>&nbsp;
+              <img class="icon-img" src="./images/bookmark.svg" alt="Bookmark" width="20" height="20">
+          </button>    
+          <button id="tun" class="hidden icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <img class="icon-img" src="./images/moon.svg" alt="Moon" width="20" height="20">
+          </button>
+          <button id="kun" class="icon-btn w-[50px] h-[50px] flex items-center text[16px] rounded-[50%] border-[1px] border-black">
+              <img class="icon-img" src="./images/moon.svg" alt="Moon" width="20" height="20">
+          </button>
+      </div>
     </header>
+
     
     <main class="site-main">
         <section class="search">
@@ -46,16 +47,12 @@
             <div class="search-wrapper-flex1">
               <select class="search-select">
                 <option value="all">All</option>
-                <option value="all">Uzbekistan</option>
-                <option value="all">Russia</option>
-                <option value="all">Luxembourg</option>
-                <option value="all">Mali</option>
               </select>
             </div>
           </div>
           <div id="country-list" class="card-container"></div>
         </section>
-      <div id="modal" class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+      <div id="modal" class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center backdrop-blur">
         <div class="modal-content bg-white p-5 rounded shadow-lg w-1/2">
             <span id="modal-close" class="absolute top-2 right-2 cursor-pointer text-xl">&times;</span>
             <h2 id="modal-title" class="text-xl font-bold mb-4">Country Details</h2>

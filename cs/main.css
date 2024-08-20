@@ -149,3 +149,19 @@ body {
 .dark_bg .modal {
     background-color: rgba(26, 32, 44, 0.75); 
 }
+
+.like-btn {
+    color: red;
+}
+
+.bookmark-btn {
+    color: dodgerblue;
+}
+
+.more-btn {
+    padding: 1px;
+    border: green solid;
+    color: white;
+    background-color: green;
+    border-radius: 15%;
+}
